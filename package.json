@@ -1,0 +1,30 @@
+{
+  "name": "projeto_aula13_backend_twitter",
+  "version": "1.0.0",
+  "description": "Projeto que simula parte do backend do Twitter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index",
+    "dev": "nodemon src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinhas93/Projeto_aula13_backend_twitter.git"
+  },
+  "keywords": [],
+  "author": "Daniel vinhas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinhas93/Projeto_aula13_backend_twitter/issues"
+  },
+  "homepage": "https://github.com/vinhas93/Projeto_aula13_backend_twitter#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
