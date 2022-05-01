@@ -11,7 +11,7 @@ const createUserController = async (req, res) => {
 	}
 
 	const foundUserEmail = await userService.findByEmeilUserService(email);
-    const foundUsername = await userService.findByUsernameUserService(username);
+	const foundUsername = await userService.findByUsernameUserService(username);
 
 	if (foundUserEmail || foundUsername) {
 		return res.status(400).send({ message: 'Usuário já existe!' });
@@ -28,7 +28,15 @@ const createUserController = async (req, res) => {
 	res.status(201).send(user);
 };
 const findAllUserController = async (req, res) => {
-	res.send({ message: 'Find All OK' });
+	const users = await userService.findAllUserService();
+
+	if (users.length === 0) {
+		return res.status(400).send({
+			message: 'Não existem usuários cadastrados!',
+		});
+	}
+
+	res.send(users);
 };
 
 module.exports = {

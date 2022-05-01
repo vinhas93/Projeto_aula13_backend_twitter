@@ -6,8 +6,11 @@ const findByUsernameUserService = (username) => User.findOne({ username: usernam
 
 const createUserService = (body) => User.create(body);
 
+const findAllUserService = () => User.find()
+
 module.exports = {
     findByEmeilUserService,
     createUserService,
-    findByUsernameUserService
+    findByUsernameUserService,
+    findAllUserService
 }
