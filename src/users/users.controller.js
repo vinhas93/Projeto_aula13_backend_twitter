@@ -22,10 +22,21 @@ const createUserController = async (req, res) => {
 		.catch((err) => console.log(err, { message: 'Erro ao criar usuário!' }));
 
 	if (!user) {
-		return res.status(400).send({ message: 'Erro ao criar usuário! 2.0' });
+		return res.status(400).send({ message: 'Erro ao criar usuário!' });
 	}
 
-	res.status(201).send(user);
+	const token = authService.generateToken(user.id);
+
+	res.status(201).send({
+		user: {
+			id: user.id,
+			name,
+			username,
+			email,
+			avatar,
+		},
+		token,
+	});
 };
 const findAllUserController = async (req, res) => {
 	const users = await userService.findAllUserService();
