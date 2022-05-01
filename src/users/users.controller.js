@@ -1,4 +1,5 @@
 const userService = require('./users.service');
+const authService = require('../auth/auth.service')
 
 const createUserController = async (req, res) => {
 	const { username, name, email, password, avatar } = req.body;
@@ -42,7 +43,7 @@ const findAllUserController = async (req, res) => {
 	const users = await userService.findAllUserService();
 
 	if (users.length === 0) {
-		return res.status(400).send({
+		return res.status(404).send({
 			message: 'Não existem usuários cadastrados!',
 		});
 	}
