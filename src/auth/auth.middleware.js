@@ -6,7 +6,7 @@ const {
 } = require('../users/users.service');
 
 module.exports = (req, res, next) => {
-	const authHeader = reqheaders.authorization;
+	const authHeader = req.headers.authorization; // de onde vem a autorization??
 
 	if (!authHeader) {
 		return res.status(401).send({ message: 'O token não foi informado!' });

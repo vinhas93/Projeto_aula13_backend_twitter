@@ -22,10 +22,6 @@ const createUserController = async (req, res) => {
 		.createUserService(req.body)
 		.catch((err) => console.log(err, { message: 'Erro ao criar usuário!' }));
 
-	if (!user) {
-		return res.status(400).send({ message: 'Erro ao criar usuário!' });
-	}
-
 	const token = authService.generateToken(user.id);
 
 	res.status(201).send({
