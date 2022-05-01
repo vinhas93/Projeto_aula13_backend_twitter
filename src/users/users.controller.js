@@ -10,9 +10,10 @@ const createUserController = async (req, res) => {
 		});
 	}
 
-	const foundUser = await userService.findByEmeilUserService(email);
+	const foundUserEmail = await userService.findByEmeilUserService(email);
+    const foundUsername = await userService.findByUsernameUserService(username);
 
-	if (foundUser) {
+	if (foundUserEmail || foundUsername) {
 		return res.status(400).send({ message: 'Usuário já existe!' });
 	}
 
