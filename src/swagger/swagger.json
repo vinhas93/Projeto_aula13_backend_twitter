@@ -10,8 +10,8 @@
     },
     "servers": [
       {
-        "url": "https://bluetwitterclone.herokuapp.com",
-        "description": "API no Heroku"
+        "url": "https://api-clone-twitter-mod03.onrender.com",
+        "description": "API no Render"
       },
       {
         "url": "http://localhost:3001",
