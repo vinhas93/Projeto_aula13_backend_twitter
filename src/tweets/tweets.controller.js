@@ -81,7 +81,7 @@ const findAllTweetsController = async (req, res) => {
 
 const searchTweetController = async (req, res) => {
   try {
-    const { message } = req.body;
+    const { message } = req.query;
 
     const tweets = await tweetService.searchTweetService(message);
 
